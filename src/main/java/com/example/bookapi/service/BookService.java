@@ -31,6 +31,9 @@ public class BookService {
 
     public BookResponse add(BookRequest request) {
         Book book = new Book();
+        if(request.title().isBlank()) {
+            return null;
+        }
         book.setTitle(request.title());
         book.setAuthor(request.author());
 
